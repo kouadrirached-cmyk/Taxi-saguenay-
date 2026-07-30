@@ -285,7 +285,7 @@
   /* ---- Bandeau paysage sous le héro ---- */
   .bandeau{
     position:relative;overflow:hidden;
-    aspect-ratio:1600/560;max-height:300px;
+    aspect-ratio:1600/228;max-height:300px;
     background:var(--nuit);
   }
   .bandeau img{width:100%;height:100%;object-fit:cover;display:block}
@@ -297,7 +297,7 @@
     text-align:center;
   }
   @media(max-width:520px){
-    .bandeau{max-height:180px}
+    .bandeau{max-height:150px}
     .bandeau .legende{font-size:.82rem;padding:28px 16px 12px}
   }
 
@@ -397,6 +397,8 @@
     color:var(--ardoise);font-size:.85rem;
   }
   footer .aff{margin-top:6px}
+  footer .credits{margin-top:10px;font-size:.72rem;opacity:.75;line-height:1.5}
+  footer .credits a{color:inherit;text-decoration:underline}
 
   /* Bouton appel collant mobile */
   .appel-collant{
@@ -500,19 +502,22 @@
   <div class="damier" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       VISUELS DE LA RÉGION — dessins originaux, libres de droits.
-       Pour mettre vos propres photos : gardez exactement les mêmes
-       noms de fichiers et remplacez-les dans le dépôt.
-         region-banniere.jpg  → bandeau large   (1600 x 560)
-         region-riviere.jpg   → carte 1         (800 x 600)
-         region-parc.jpg      → carte 2         (800 x 600)
-         region-route.jpg     → carte 3         (800 x 600)
-       Le texte alternatif (alt) sert aux moteurs de recherche et aux
-       personnes malvoyantes : décrivez la vraie photo si vous la changez.
+       PHOTOS DE LA RÉGION — vraies photographies provenant de
+       Wikimedia Commons, sous licence Creative Commons BY-SA 4.0.
+       Cette licence autorise l'usage commercial À CONDITION de
+       nommer l'auteur et la licence : c'est fait dans le pied de page.
+       NE PAS retirer les crédits sans retirer les photos.
+
+       Pour mettre vos propres photos : gardez les mêmes noms de
+       fichiers, et supprimez alors la ligne de crédits du pied de page.
+         region-banniere.jpg  → bandeau large  (format très allongé)
+         region-fjord.jpg     → carte 1
+         region-riviere.jpg   → carte 2
+         region-parc.jpg      → carte 3
        ═══════════════════════════════════════════════════════════════ -->
   <div class="bandeau">
-    <img src="region-banniere.jpg" width="1600" height="560" loading="lazy" decoding="async"
-         alt="Le fjord du Saguenay au lever du soleil, entre deux versants montagneux">
+    <img src="region-banniere.jpg" width="1600" height="228" loading="lazy" decoding="async"
+         alt="Panorama du fjord du Saguenay, ses versants boisés plongeant dans l'eau">
     <p class="legende">La route du fjord, de chez vous jusqu'à destination.</p>
   </div>
 
@@ -579,27 +584,27 @@
     <p class="intro-section">Le Saguenay–Lac-Saint-Jean, on le connaît par cœur — et on en sort tous les jours.</p>
     <div class="grille-region">
       <div class="vue">
-        <img src="region-riviere.jpg" width="800" height="600" loading="lazy" decoding="async"
-             alt="Une rivière du Saguenay–Lac-Saint-Jean bordée d'épinettes au crépuscule">
+        <img src="region-fjord.jpg" width="900" height="600" loading="lazy" decoding="async"
+             alt="Le fjord du Saguenay vu d'un belvédère, entre les épinettes, sous un ciel d'été">
         <div class="txt">
-          <h3>Les rivières</h3>
-          <p>De la vallée jusqu'au fjord, on suit ces routes toute l'année, par tous les temps.</p>
+          <h3>Le fjord</h3>
+          <p>De Saguenay à Tadoussac, ces routes-là, on les fait par tous les temps et à toute heure.</p>
         </div>
       </div>
       <div class="vue">
-        <img src="region-parc.jpg" width="800" height="600" loading="lazy" decoding="async"
-             alt="Les sommets enneigés du parc national, au clair de lune, au-dessus de la forêt d'épinettes">
+        <img src="region-riviere.jpg" width="900" height="506" loading="lazy" decoding="async"
+             alt="La rivière Saguenay à Chicoutimi en hiver, avec les cascades gelées sur la falaise">
+        <div class="txt">
+          <h3>L'hiver</h3>
+          <p>Neige, verglas, routes fermées : on part quand même, avec des pneus d'hiver et de l'expérience.</p>
+        </div>
+      </div>
+      <div class="vue">
+        <img src="region-parc.jpg" width="900" height="600" loading="lazy" decoding="async"
+             alt="La baie Éternité dans le parc national du Fjord-du-Saguenay, vue depuis les hauteurs boisées">
         <div class="txt">
           <h3>Le parc national</h3>
           <p>Randonneurs, visiteurs, familles : on vous dépose à l'entrée et on revient vous chercher.</p>
-        </div>
-      </div>
-      <div class="vue">
-        <img src="region-route.jpg" width="800" height="600" loading="lazy" decoding="async"
-             alt="Une route droite bordée de forêt, filant vers l'horizon à la tombée du jour">
-        <div class="txt">
-          <h3>La route</h3>
-          <p>Québec, Montréal, l'aéroport : des heures de route que vous passez assis à l'arrière, tranquille.</p>
         </div>
       </div>
     </div>
@@ -702,6 +707,13 @@
 
 <footer>
   <div>© 2026 · 9420-1001 Québec Inc. · Saguenay, QC</div>
+  <div class="credits">
+    Photos : <a href="https://commons.wikimedia.org/wiki/File:Fjord_du_Saguenay_banner.jpg" rel="nofollow">Ymblanter</a>,
+    <a href="https://commons.wikimedia.org/wiki/File:Fjord_Saguenay_2.jpg" rel="nofollow">J-A Béland</a>,
+    <a href="https://commons.wikimedia.org/wiki/File:Rivi%C3%A8re_Saguenay,_Chicoutimi.jpg" rel="nofollow">Aurkawl</a>,
+    <a href="https://commons.wikimedia.org/wiki/File:Baie_%C3%A9ternit%C3%A9_01.jpg" rel="nofollow">Cephas</a>
+    — Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="nofollow">CC BY-SA 4.0</a>
+  </div>
 </footer>
 
 <div class="appel-collant">
