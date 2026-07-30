@@ -79,10 +79,29 @@
   }
 
   /* ---- Header ---- */
+  /* Tout le haut : photo du fjord, voile sombre, texte clair */
+  .entete{
+    position:relative;overflow:hidden;
+    background:var(--nuit);
+    isolation:isolate;
+  }
+  .entete .fond{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center 42%;
+    z-index:-2;
+  }
+  .entete::after{
+    content:'';position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg,rgba(11,27,43,.82) 0%,rgba(11,27,43,.5) 36%,rgba(11,27,43,.86) 80%,var(--nuit) 100%),
+      radial-gradient(120% 80% at 50% 8%,rgba(247,195,37,.16),transparent 62%);
+  }
   header{
+    position:relative;
     display:flex;align-items:center;justify-content:space-between;
-    padding:14px 20px;
+    padding:16px 20px;
     max-width:960px;margin:0 auto;
+    color:var(--neige);
   }
   .logo{
     font-family:'Archivo Black',sans-serif;
@@ -98,35 +117,41 @@
   }
   header a.tel-mini{
     font-family:'JetBrains Mono',monospace;
-    font-size:.9rem;color:var(--jaune);
-    background:var(--nuit);
-    text-decoration:none;
-    padding:8px 16px;border-radius:999px;
+    font-size:.9rem;color:var(--nuit);
+    background:var(--jaune);
+    text-decoration:none;font-weight:700;
+    padding:9px 17px;border-radius:999px;
     white-space:nowrap;
+    box-shadow:0 6px 18px rgba(247,195,37,.32);
   }
+  header a.tel-mini:hover{filter:brightness(1.06)}
 
   /* ---- Héro ---- */
   .hero{
+    position:relative;
     max-width:960px;margin:0 auto;
-    padding:56px 20px 48px;
+    padding:64px 20px 68px;
     text-align:center;
   }
   .hero .sur-titre{
-    color:#A97E08;
-    font-weight:600;font-size:.85rem;
-    letter-spacing:.18em;text-transform:uppercase;
-    margin-bottom:16px;
+    color:var(--jaune);
+    font-weight:600;font-size:.8rem;
+    letter-spacing:.22em;text-transform:uppercase;
+    margin-bottom:18px;
   }
   h1{
     font-family:'Archivo Black',sans-serif;
-    font-size:clamp(2.1rem,7vw,3.6rem);
-    line-height:1.1;
-    margin-bottom:18px;
+    font-size:clamp(2.2rem,7.4vw,3.8rem);
+    line-height:1.04;letter-spacing:-.5px;
+    color:var(--neige);
+    margin-bottom:20px;
+    text-shadow:0 2px 24px rgba(0,0,0,.45);
   }
-  h1 .fin{color:var(--ardoise)}
+  h1 .fin{color:#9DB4C6}
   .hero p.sous{
-    color:var(--ardoise);font-size:1.05rem;
-    max-width:520px;margin:0 auto 36px;
+    color:#C6D4E0;font-size:1.05rem;
+    max-width:520px;margin:0 auto 38px;
+    text-shadow:0 1px 12px rgba(0,0,0,.4);
   }
 
   /* ---- Taximètre (signature) ---- */
@@ -167,7 +192,8 @@
     color:var(--neige);letter-spacing:.05em;
   }
   .hero .dispo{
-    margin-top:22px;color:var(--ardoise);font-size:.9rem;
+    margin-top:22px;color:#BCCCDA;font-size:.9rem;
+    text-shadow:0 1px 10px rgba(0,0,0,.5);
   }
 
   /* ---- Sections ---- */
@@ -177,10 +203,27 @@
   }
   .titre-section{
     font-family:'Archivo Black',sans-serif;
-    font-size:clamp(1.4rem,4.5vw,1.9rem);
-    margin-bottom:8px;
+    font-size:clamp(1.5rem,4.8vw,2.05rem);
+    letter-spacing:-.3px;line-height:1.15;
+    margin-bottom:10px;
   }
-  .intro-section{color:var(--ardoise);margin-bottom:32px;max-width:560px}
+  .titre-section::before{
+    content:'';display:block;
+    width:44px;height:5px;border-radius:3px;
+    background:var(--jaune);
+    margin-bottom:16px;
+  }
+  .intro-section{color:var(--ardoise);margin-bottom:34px;max-width:560px;font-size:1.02rem}
+
+  /* Une section sur deux passe en bleu nuit : le site respire */
+  .sombre{background:var(--nuit);color:var(--neige)}
+  .sombre .intro-section{color:#A9BECE}
+  .sombre .carte{
+    background:var(--nuit-2);
+    border-color:rgba(255,255,255,.09);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  .sombre .carte p{color:#A9BECE}
 
   /* Services */
   .grille-services{
@@ -191,14 +234,20 @@
     background:var(--carte);
     border:1px solid var(--bordure);
     border-radius:var(--radius);
-    padding:22px;
-    box-shadow:0 2px 10px rgba(11,27,43,.05);
+    padding:24px 22px;
+    box-shadow:0 6px 22px rgba(11,27,43,.07);
+    transition:transform .16s ease, box-shadow .16s ease;
   }
+  .carte:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(11,27,43,.13)}
   .carte .ico{
-    font-size:1.5rem;margin-bottom:12px;display:block;
+    display:inline-flex;align-items:center;justify-content:center;
+    width:46px;height:46px;border-radius:13px;
+    background:rgba(247,195,37,.16);
+    border:1px solid rgba(247,195,37,.34);
+    font-size:1.4rem;margin-bottom:15px;
   }
-  .carte h3{font-size:1.05rem;margin-bottom:6px}
-  .carte p{color:var(--ardoise);font-size:.92rem}
+  .carte h3{font-size:1.06rem;margin-bottom:7px;letter-spacing:-.2px}
+  .carte p{color:var(--ardoise);font-size:.93rem;line-height:1.6}
 
   /* Flotte */
   .flotte{
@@ -273,12 +322,19 @@
   /* Appel final */
   .final{
     text-align:center;
-    padding:64px 20px 72px;
+    padding:66px 20px 76px;
+    background:var(--nuit);color:var(--neige);
+    background-image:radial-gradient(120% 90% at 50% 0%,rgba(247,195,37,.12),transparent 60%);
   }
   .final h2{
     font-family:'Archivo Black',sans-serif;
-    font-size:clamp(1.5rem,5vw,2.2rem);
-    margin-bottom:24px;
+    font-size:clamp(1.6rem,5.2vw,2.3rem);
+    letter-spacing:-.4px;
+    margin-bottom:26px;
+  }
+  .final .sous-final{
+    color:#A9BECE;font-size:1rem;
+    max-width:460px;margin:0 auto 30px;
   }
 
 
@@ -310,8 +366,12 @@
   .vue{
     background:var(--carte);border:1px solid var(--bordure);
     border-radius:var(--radius);overflow:hidden;
-    box-shadow:0 8px 24px rgba(11,27,43,.07);
+    box-shadow:0 8px 24px rgba(11,27,43,.09);
+    transition:transform .18s ease, box-shadow .18s ease;
   }
+  .vue:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(11,27,43,.16)}
+  .vue img{transition:transform .5s ease}
+  .vue:hover img{transform:scale(1.05)}
   .vue img{
     width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;
     background:var(--nuit);
@@ -333,6 +393,9 @@
   .lien-reserver:hover{border-color:var(--jaune);box-shadow:0 8px 22px rgba(247,195,37,.22)}
 
   #reserver{max-width:960px;margin:0 auto;padding:52px 20px}
+  /* Les sections sombres saignent sur toute la largeur, le contenu reste centré */
+  section.sombre{max-width:none;padding-left:0;padding-right:0}
+  section.sombre > *{max-width:960px;margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px}
   .form-carte{
     background:var(--carte);border:1px solid var(--bordure);
     border-radius:var(--radius);padding:24px 20px;
@@ -477,16 +540,18 @@
 
 <div class="damier" aria-hidden="true"></div>
 
-<header>
-  <div class="logo"><span class="puce" aria-hidden="true"></span>Taxi Saguenay</div>
-  <a class="tel-mini" href="tel:+15142069519">514 206-9519</a>
-</header>
+<div class="entete">
+  <img class="fond" src="hero-fjord.jpg" width="1500" height="1000" fetchpriority="high" decoding="async"
+       alt="" aria-hidden="true">
+  <header>
+    <div class="logo"><span class="puce" aria-hidden="true"></span>Taxi Saguenay</div>
+    <a class="tel-mini" href="tel:+15142069519">514 206-9519</a>
+  </header>
 
-<main>
   <div class="hero">
     <p class="sur-titre">Saguenay · Lac-Saint-Jean</p>
     <h1>Taxi longue distance,<br><span class="fin">partout au Québec.</span></h1>
-    <p class="sous">Transport longue distance au départ de toute la région : rendez-vous médicaux hors région, aéroports, gares et déplacements planifiés. Un chauffeur professionnel, une voiture propre, un prix convenu d'avance.</p>
+    <p class="sous">Rendez-vous médicaux, aéroports, grandes villes. Au départ de toute la région, avec un prix confirmé avant le départ.</p>
 
     <a class="taximetre" href="tel:+15142069519" aria-label="Appeler le 514 206-9519">
       <span class="etiquette"><span>Taxi</span><span class="libre">Libre</span></span>
@@ -498,7 +563,9 @@
 
     <div><a class="lien-reserver" href="#reserver">✍️ Ou réservez par message</a></div>
   </div>
+</div>
 
+<main>
   <div class="damier" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════════════════════════════════
@@ -521,7 +588,7 @@
     <p class="legende">La route du fjord, de chez vous jusqu'à destination.</p>
   </div>
 
-  <section id="services">
+  <section id="services" class="sombre">
     <h2 class="titre-section">Nos services</h2>
     <p class="intro-section">Des trajets planifiés à l'avance, au départ de n'importe quelle municipalité de la région.</p>
     <div class="grille-services">
@@ -697,6 +764,7 @@
 
   <div class="final">
     <h2>Planifions votre trajet.</h2>
+    <p class="sous-final">Dites-nous d'où vous partez et où vous allez : on confirme le prix avant le départ.</p>
     <a class="taximetre" href="tel:+15142069519" aria-label="Appeler le 514 206-9519">
       <span class="etiquette"><span>Taxi</span><span class="libre">Libre</span></span>
       <span class="numero">514 206-9519</span>
