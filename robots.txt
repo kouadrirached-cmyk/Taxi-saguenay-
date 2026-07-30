@@ -1,0 +1,7 @@
+# Site en préparation — pas encore lancé.
+# Aucun moteur de recherche ne doit référencer ces pages pour l'instant.
+# Le jour du lancement, remplacer tout ce fichier par :
+#   User-agent: *
+#   Allow: /
+User-agent: *
+Disallow: /
