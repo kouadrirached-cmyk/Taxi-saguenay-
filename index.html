@@ -281,6 +281,45 @@
     margin-bottom:24px;
   }
 
+
+  /* ---- Bandeau paysage sous le héro ---- */
+  .bandeau{
+    position:relative;overflow:hidden;
+    aspect-ratio:1600/560;max-height:300px;
+    background:var(--nuit);
+  }
+  .bandeau img{width:100%;height:100%;object-fit:cover;display:block}
+  .bandeau .legende{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:36px 20px 16px;
+    background:linear-gradient(to top,rgba(11,27,43,.92),transparent);
+    color:var(--neige);font-size:.92rem;font-weight:600;
+    text-align:center;
+  }
+  @media(max-width:520px){
+    .bandeau{max-height:180px}
+    .bandeau .legende{font-size:.82rem;padding:28px 16px 12px}
+  }
+
+  /* ---- Galerie de la région ---- */
+  #region{max-width:960px;margin:0 auto;padding:52px 20px}
+  .grille-region{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;margin-top:26px;
+  }
+  .vue{
+    background:var(--carte);border:1px solid var(--bordure);
+    border-radius:var(--radius);overflow:hidden;
+    box-shadow:0 8px 24px rgba(11,27,43,.07);
+  }
+  .vue img{
+    width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;
+    background:var(--nuit);
+  }
+  .vue .txt{padding:14px 16px 18px}
+  .vue h3{font-family:'Archivo Black',sans-serif;font-size:1rem;margin-bottom:6px}
+  .vue p{color:var(--ardoise);font-size:.88rem;line-height:1.55}
+
   /* ---- Réservation par message ---- */
   .lien-reserver{
     display:inline-flex;align-items:center;gap:8px;
@@ -460,6 +499,23 @@
 
   <div class="damier" aria-hidden="true"></div>
 
+  <!-- ═══════════════════════════════════════════════════════════════
+       VISUELS DE LA RÉGION — dessins originaux, libres de droits.
+       Pour mettre vos propres photos : gardez exactement les mêmes
+       noms de fichiers et remplacez-les dans le dépôt.
+         region-banniere.jpg  → bandeau large   (1600 x 560)
+         region-riviere.jpg   → carte 1         (800 x 600)
+         region-parc.jpg      → carte 2         (800 x 600)
+         region-route.jpg     → carte 3         (800 x 600)
+       Le texte alternatif (alt) sert aux moteurs de recherche et aux
+       personnes malvoyantes : décrivez la vraie photo si vous la changez.
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="bandeau">
+    <img src="region-banniere.jpg" width="1600" height="560" loading="lazy" decoding="async"
+         alt="Le fjord du Saguenay au lever du soleil, entre deux versants montagneux">
+    <p class="legende">La route du fjord, de chez vous jusqu'à destination.</p>
+  </div>
+
   <section id="services">
     <h2 class="titre-section">Nos services</h2>
     <p class="intro-section">Des trajets planifiés à l'avance, au départ de n'importe quelle municipalité de la région.</p>
@@ -517,6 +573,39 @@
       </div>
     </div>
   </section>
+
+  <section id="region">
+    <h2 class="titre-section">Notre région</h2>
+    <p class="intro-section">Le Saguenay–Lac-Saint-Jean, on le connaît par cœur — et on en sort tous les jours.</p>
+    <div class="grille-region">
+      <div class="vue">
+        <img src="region-riviere.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="Une rivière du Saguenay–Lac-Saint-Jean bordée d'épinettes au crépuscule">
+        <div class="txt">
+          <h3>Les rivières</h3>
+          <p>De la vallée jusqu'au fjord, on suit ces routes toute l'année, par tous les temps.</p>
+        </div>
+      </div>
+      <div class="vue">
+        <img src="region-parc.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="Les sommets enneigés du parc national, au clair de lune, au-dessus de la forêt d'épinettes">
+        <div class="txt">
+          <h3>Le parc national</h3>
+          <p>Randonneurs, visiteurs, familles : on vous dépose à l'entrée et on revient vous chercher.</p>
+        </div>
+      </div>
+      <div class="vue">
+        <img src="region-route.jpg" width="800" height="600" loading="lazy" decoding="async"
+             alt="Une route droite bordée de forêt, filant vers l'horizon à la tombée du jour">
+        <div class="txt">
+          <h3>La route</h3>
+          <p>Québec, Montréal, l'aéroport : des heures de route que vous passez assis à l'arrière, tranquille.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="damier" aria-hidden="true"></div>
 
   <section id="infos">
     <div class="deux-col">
