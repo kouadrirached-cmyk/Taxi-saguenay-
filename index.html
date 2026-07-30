@@ -4,7 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taxi Saguenay — 24h/7 | Chicoutimi, Jonquière, La Baie</title>
-<meta name="description" content="Service de taxi fiable à Saguenay. Flotte de Toyota Prius hybrides. Aéroport, rendez-vous médicaux, courses. Paiement Interac accepté. Appelez maintenant.">
+<meta name="description" content="Service de taxi fiable à Saguenay, 24 h sur 24. Flotte de Toyota Prius hybrides. Aéroport de Bagotville, rendez-vous médicaux, courses. Interac accepté. Appelez ou réservez par message.">
+<link rel="canonical" href="https://kouadrirached-cmyk.github.io/Taxi-saguenay-/">
+<meta name="theme-color" content="#0B1B2B">
+<meta name="robots" content="index,follow">
+<meta name="geo.region" content="CA-QC">
+<meta name="geo.placename" content="Saguenay">
+
+<!-- Aperçu au partage : Facebook, Messenger, texto -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:site_name" content="Taxi Saguenay">
+<meta property="og:title" content="Taxi Saguenay — 24 h sur 24 | Chicoutimi, Jonquière, La Baie">
+<meta property="og:description" content="Un taxi fiable, en tout temps. Toyota Prius hybrides, Interac à bord. Appelez le 514 206-9519 ou réservez par message.">
+<meta property="og:url" content="https://kouadrirached-cmyk.github.io/Taxi-saguenay-/">
+<meta property="og:image" content="https://kouadrirached-cmyk.github.io/Taxi-saguenay-/og-taxi-saguenay.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Taxi Saguenay — 514 206-9519">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Taxi Saguenay — 24 h sur 24">
+<meta name="twitter:description" content="Chicoutimi, Jonquière, La Baie. Appelez le 514 206-9519 ou réservez par message.">
+<meta name="twitter:image" content="https://kouadrirached-cmyk.github.io/Taxi-saguenay-/og-taxi-saguenay.png">
+
+<!-- Icône d'onglet et d'écran d'accueil -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23122841'/%3E%3Cpath d='M0 0h8v8H0zM16 0h8v8h-8zM8 8h8v8H8zM24 8h8v8h-8zM0 16h8v8H0zM16 16h8v8h-8zM8 24h8v8H8zM24 24h8v8h-8z' fill='%23F7C325'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
@@ -248,6 +274,75 @@
     margin-bottom:24px;
   }
 
+  /* ---- Réservation par message ---- */
+  .lien-reserver{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:18px;
+    background:var(--carte);color:var(--nuit);
+    border:1px solid var(--bordure);
+    font-weight:600;font-size:.98rem;text-decoration:none;
+    padding:13px 26px;border-radius:999px;
+    box-shadow:0 6px 18px rgba(11,27,43,.07);
+  }
+  .lien-reserver:hover{border-color:var(--jaune);box-shadow:0 8px 22px rgba(247,195,37,.22)}
+
+  #reserver{max-width:960px;margin:0 auto;padding:52px 20px}
+  .form-carte{
+    background:var(--carte);border:1px solid var(--bordure);
+    border-radius:var(--radius);padding:24px 20px;
+    box-shadow:0 10px 30px rgba(11,27,43,.06);
+    max-width:560px;margin:0 auto;
+  }
+  .champ{margin-bottom:14px}
+  .champ label{
+    display:block;font-size:.82rem;font-weight:600;
+    color:var(--ardoise);margin-bottom:6px;
+  }
+  .champ label .oblig{color:#C0392B}
+  .champ input,.champ select,.champ textarea{
+    width:100%;font-family:inherit;font-size:1rem;color:var(--nuit);
+    background:var(--neige);border:1px solid var(--bordure);
+    border-radius:10px;padding:13px 14px;
+  }
+  .champ textarea{resize:vertical;min-height:70px}
+  .champ input:focus,.champ select:focus,.champ textarea:focus{
+    outline:3px solid var(--jaune);outline-offset:1px;border-color:transparent;
+  }
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.duo{grid-template-columns:1fr}}
+  .quand-plus-tard{display:none}
+  .quand-plus-tard.visible{display:block}
+  .btn-envoyer{
+    width:100%;cursor:pointer;
+    background:var(--jaune);color:var(--nuit);
+    font-family:inherit;font-weight:700;font-size:1.05rem;
+    border:none;border-radius:999px;padding:15px 24px;
+    box-shadow:0 8px 24px rgba(247,195,37,.35);
+    margin-top:4px;
+  }
+  .btn-envoyer:hover{filter:brightness(1.04)}
+  .btn-second{
+    width:100%;cursor:pointer;
+    background:transparent;color:var(--ardoise);
+    font-family:inherit;font-weight:600;font-size:.9rem;
+    border:1px solid var(--bordure);border-radius:999px;
+    padding:12px 24px;margin-top:10px;
+  }
+  .btn-second:hover{border-color:var(--ardoise);color:var(--nuit)}
+  .note-form{
+    font-size:.82rem;color:var(--ardoise);
+    text-align:center;margin-top:14px;line-height:1.5;
+  }
+  .note-form a{color:var(--nuit);font-weight:600}
+  .etat-form{
+    font-size:.9rem;font-weight:600;text-align:center;
+    margin-top:12px;padding:11px 14px;border-radius:10px;
+    display:none;
+  }
+  .etat-form.visible{display:block}
+  .etat-form.ok{background:rgba(46,158,99,.12);color:#1E6B43}
+  .etat-form.err{background:rgba(192,57,43,.1);color:#96271C}
+
   /* Footer */
   footer{
     border-top:1px solid var(--bordure);
@@ -278,7 +373,59 @@
   @media(min-width:720px){
     .appel-collant{display:none}
   }
+  /* Pendant qu'on remplit le formulaire, le bouton d'appel s'efface :
+     deux gros boutons jaunes superposés, c'est un mauvais appui assuré. */
+  .appel-collant{transition:opacity .18s ease, transform .18s ease}
+  .appel-collant.masque{opacity:0;transform:translateY(100%);pointer-events:none}
 </style>
+<!-- Fiche d'entreprise lue par Google : type de commerce, téléphone,
+     heures d'ouverture, villes desservies, moyens de paiement. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["TaxiService", "LocalBusiness"],
+  "@id": "https://kouadrirached-cmyk.github.io/Taxi-saguenay-/#entreprise",
+  "name": "Taxi Saguenay",
+  "legalName": "9420-1001 Québec Inc.",
+  "description": "Service de taxi 24 h sur 24 à Saguenay : Chicoutimi, Jonquière et La Baie. Flotte de Toyota Prius hybrides. Aéroport de Bagotville, rendez-vous médicaux, courses et retours de soirée.",
+  "url": "https://kouadrirached-cmyk.github.io/Taxi-saguenay-/",
+  "image": "https://kouadrirached-cmyk.github.io/Taxi-saguenay-/og-taxi-saguenay.png",
+  "telephone": "+1-514-206-9519",
+  "priceRange": "$$",
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": "Comptant, Interac, carte de débit",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Saguenay",
+    "addressRegion": "QC",
+    "addressCountry": "CA"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Chicoutimi" },
+    { "@type": "City", "name": "Jonquière" },
+    { "@type": "City", "name": "La Baie" },
+    { "@type": "City", "name": "Saguenay" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "availableLanguage": ["fr", "en"],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "name": "Réserver un taxi",
+    "target": "https://kouadrirached-cmyk.github.io/Taxi-saguenay-/#reserver"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transport vers l'aéroport de Bagotville" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transport pour rendez-vous médicaux" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Courses et déplacements quotidiens" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retours de soirée sécuritaires" } }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -302,6 +449,8 @@
     </a>
 
     <p class="dispo">Réponse rapide · Paiement Interac et comptant</p>
+
+    <div><a class="lien-reserver" href="#reserver">✍️ Ou réservez par message</a></div>
   </div>
 
   <div class="damier" aria-hidden="true"></div>
@@ -389,6 +538,64 @@
 
   <div class="damier" aria-hidden="true"></div>
 
+  <section id="reserver">
+    <h2 class="titre-section">Réserver sans appeler</h2>
+    <p class="intro-section">Remplissez le formulaire : votre téléphone prépare le texto, vous n'avez qu'à l'envoyer.</p>
+
+    <form class="form-carte" id="formReservation" novalidate>
+      <div class="champ">
+        <label for="r-nom">Votre nom <span class="oblig" aria-hidden="true">*</span></label>
+        <input id="r-nom" name="nom" type="text" autocomplete="name" required>
+      </div>
+      <div class="champ">
+        <label for="r-tel">Votre téléphone <span class="oblig" aria-hidden="true">*</span></label>
+        <input id="r-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="418 000-0000" required>
+      </div>
+      <div class="champ">
+        <label for="r-depart">Adresse de départ <span class="oblig" aria-hidden="true">*</span></label>
+        <input id="r-depart" name="depart" type="text" autocomplete="street-address" placeholder="123 rue Racine, Chicoutimi" required>
+      </div>
+      <div class="champ">
+        <label for="r-dest">Destination</label>
+        <input id="r-dest" name="destination" type="text" placeholder="Aéroport de Bagotville">
+      </div>
+      <div class="duo">
+        <div class="champ">
+          <label for="r-quand">Quand?</label>
+          <select id="r-quand" name="quand">
+            <option value="maintenant">Le plus tôt possible</option>
+            <option value="plus-tard">À une heure précise</option>
+          </select>
+        </div>
+        <div class="champ">
+          <label for="r-pass">Passagers</label>
+          <select id="r-pass" name="passagers">
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+          </select>
+        </div>
+      </div>
+      <div class="champ quand-plus-tard" id="blocHeure">
+        <label for="r-heure">Date et heure souhaitées</label>
+        <input id="r-heure" name="heure" type="datetime-local">
+      </div>
+      <div class="champ">
+        <label for="r-note">Remarque (bagages, siège d'auto, animal…)</label>
+        <textarea id="r-note" name="note" rows="2"></textarea>
+      </div>
+
+      <button class="btn-envoyer" type="submit">💬 Envoyer ma demande par texto</button>
+      <button class="btn-second" type="button" id="btnCopier">📋 Copier ma demande</button>
+
+      <p class="etat-form" id="etatForm" role="status" aria-live="polite"></p>
+      <p class="note-form">
+        Votre demande n'est confirmée qu'une fois le texto envoyé et répondu.
+        Pour un départ immédiat, <a href="tel:+15142069519">appelez le 514 206-9519</a>.
+      </p>
+    </form>
+  </section>
+
+  <div class="damier" aria-hidden="true"></div>
+
   <div class="final">
     <h2>Besoin d'un taxi maintenant?</h2>
     <a class="taximetre" href="tel:+15142069519" aria-label="Appeler le 514 206-9519">
@@ -407,6 +614,106 @@
 <div class="appel-collant">
   <a href="tel:+15142069519">📞 Appeler un taxi</a>
 </div>
+
+<script>
+// ── Réservation par texto, sans serveur ──
+// Le formulaire assemble le message et ouvre l'application de messages
+// du téléphone, déjà remplie. Rien n'est envoyé ni conservé en ligne.
+(function(){
+  var NUMERO='+15142069519';
+  var form=document.getElementById('formReservation');
+  if(!form)return;
+  var quand=document.getElementById('r-quand');
+  var blocHeure=document.getElementById('blocHeure');
+  var etat=document.getElementById('etatForm');
+
+  // Le champ date n'apparaît que pour une réservation à l'avance
+  function majHeure(){
+    var tard=quand.value==='plus-tard';
+    blocHeure.classList.toggle('visible',tard);
+    if(tard&&!document.getElementById('r-heure').value){
+      var d=new Date(Date.now()+60*60*1000-new Date().getTimezoneOffset()*60000);
+      document.getElementById('r-heure').value=d.toISOString().slice(0,16);
+    }
+  }
+  quand.addEventListener('change',majHeure);
+  majHeure();
+
+  // Passer par un vrai lien cliqué : c'est ce que Safari sur iPhone
+  // accepte le plus sûrement pour ouvrir l'application Messages.
+  function ouvrirLien(u){
+    var a=document.createElement('a');
+    a.href=u;a.style.display='none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){if(a.parentNode)a.parentNode.removeChild(a);},0);
+  }
+  function dit(msg,ok){
+    etat.textContent=msg;
+    etat.className='etat-form visible '+(ok?'ok':'err');
+  }
+  function val(id){return (document.getElementById(id).value||'').trim();}
+
+  function message(){
+    var nom=val('r-nom'), tel=val('r-tel'), dep=val('r-depart');
+    if(!nom||!tel||!dep){
+      dit('Remplissez votre nom, votre téléphone et l\'adresse de départ.',false);
+      (!nom?document.getElementById('r-nom'):!tel?document.getElementById('r-tel'):document.getElementById('r-depart')).focus();
+      return null;
+    }
+    var quandTxt='Le plus tôt possible';
+    if(quand.value==='plus-tard'){
+      var h=val('r-heure');
+      if(h){
+        var d=new Date(h);
+        quandTxt=isNaN(d)?h:d.toLocaleString('fr-CA',{weekday:'long',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'});
+      }
+    }
+    var l=['Bonjour, demande de taxi :',
+      'Nom : '+nom,
+      'Téléphone : '+tel,
+      'Départ : '+dep];
+    var dest=val('r-dest'); if(dest)l.push('Destination : '+dest);
+    l.push('Quand : '+quandTxt);
+    l.push('Passagers : '+val('r-pass'));
+    var note=val('r-note'); if(note)l.push('Remarque : '+note);
+    return l.join('\n');
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var m=message(); if(!m)return;
+    // « ?& » fonctionne autant sur Android que sur iPhone
+    ouvrirLien('sms:'+NUMERO+'?&body='+encodeURIComponent(m));
+    dit('Votre application de messages s\'ouvre. Appuyez sur Envoyer pour confirmer.',true);
+  });
+
+  // Effacer le bouton d'appel collant tant que le formulaire est à l'écran
+  var barre=document.querySelector('.appel-collant');
+  if(barre&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(ent){
+      barre.classList.toggle('masque',ent[0].isIntersecting);
+    },{threshold:.12}).observe(form);
+  }
+
+  document.getElementById('btnCopier').addEventListener('click',function(){
+    var m=message(); if(!m)return;
+    function secours(){
+      var t=document.createElement('textarea');
+      t.value=m;t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.select();
+      try{document.execCommand('copy');dit('Demande copiée. Collez-la dans un message.',true);}
+      catch(err){dit('Copie impossible sur cet appareil.',false);}
+      document.body.removeChild(t);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(m).then(function(){
+        dit('Demande copiée. Collez-la dans un message.',true);
+      },secours);
+    }else secours();
+  });
+})();
+</script>
 
 </body>
 </html>
